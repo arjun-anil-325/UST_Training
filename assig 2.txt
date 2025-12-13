@@ -1,0 +1,50 @@
+* PSEUDO CODE
+
+START
+
+DECLARE num1, num2, result
+DECLARE choice
+
+PRINT "Enter first number"
+INPUT num1
+
+PRINT "Enter second number"
+INPUT num2
+
+PRINT "Select operation"
+PRINT "1. Addition"
+PRINT "2. Subtraction"
+PRINT "3. Multiplication"
+PRINT "4. Division"
+
+INPUT choice
+
+IF choice == 1 THEN
+    result = num1 + num2
+    PRINT result
+
+ELSE IF choice == 2 THEN
+    result = num1 - num2
+    PRINT result
+
+ELSE IF choice == 3 THEN
+    result = num1 * num2
+    PRINT result
+
+ELSE IF choice == 4 THEN
+    IF num2 == 0 THEN
+        PRINT "Division by zero not allowed"
+    ELSE
+        result = num1 / num2
+        PRINT result
+    ENDIF
+
+ELSE
+    PRINT "Invalid choice"
+ENDIF
+
+END
+
+
+
+

@@ -1,0 +1,60 @@
+START
+
+DECLARE itemname
+DECLARE quantity
+DECLARE inventory as list
+
+FUNCTION addItem()
+    INPUT itemname
+    INPUT quantity
+    IF quantity < 0 THEN
+        PRINT "Invalid quantity"
+    ELSE
+        STORE itemname and quantity in inventory
+        PRINT "Item added"
+    ENDIF
+END FUNCTION
+
+FUNCTION updateQuantity()
+    INPUT itemname
+    IF itemname exists in inventory THEN
+        INPUT quantity
+        STORE new quantity
+        PRINT "Quantity updated"
+    ELSE
+        PRINT "Item not found"
+    ENDIF
+END FUNCTION
+
+FUNCTION generateReport()
+    IF inventory is empty THEN
+        PRINT "No items in inventory"
+    ELSE
+        FOR each item in inventory
+            PRINT itemname and quantity
+        END FOR
+    ENDIF
+END FUNCTION
+
+REPEAT
+    PRINT "1. Add Item"
+    PRINT "2. Update Quantity"
+    PRINT "3. Generate Report"
+    PRINT "4. Exit"
+    INPUT choice
+
+    IF choice == 1 THEN
+        CALL addItem()
+    ELSE IF choice == 2 THEN
+        CALL updateQuantity()
+    ELSE IF choice == 3 THEN
+        CALL generateReport()
+    ELSE IF choice == 4 THEN
+        PRINT "Exit"
+    ELSE
+        PRINT "Invalid choice"
+    ENDIF
+
+UNTIL choice == 4
+
+END
